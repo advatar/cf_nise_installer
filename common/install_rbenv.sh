@@ -1,6 +1,7 @@
 #!/bin/bash -ex
 
 # Install rbenv and Ruby
+apt-get install curl wget
 
 if [ ! -d ~/.rbenv ]; then
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
