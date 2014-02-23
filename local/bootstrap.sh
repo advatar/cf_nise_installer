@@ -13,7 +13,7 @@ if ! (which git); then
      apt-get install -y git-core
 fi
 
-INSTALLER_URL=${INSTALLER_URL:-https://github.com/yudai/cf_nise_installer.git}
+INSTALLER_URL=${INSTALLER_URL:-https://github.com/advatar/cf_nise_installer.git}
 INSTALLER_BRANCH=${INSTALLER_BRANCH:-master}
 
 if [ ! -d cf_nise_installer ]; then
@@ -24,5 +24,5 @@ fi
     cd cf_nise_installer
     git checkout ${INSTALLER_BRANCH}
     git pull
-    ./local/install.sh
+    docker build .
 )
