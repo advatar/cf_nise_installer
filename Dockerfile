@@ -3,7 +3,8 @@ RUN apt-get update
 RUN apt-get -y install git-core libmysqlclient-dev libpq-dev libsqlite3-dev
 ADD ./common /common
 ADD ./local /local
-RUN "/common/clone_nise_bosh.sh;cd nise_bosh;./bin/init"
+RUN "/common/clone_nise_bosh.sh"
+RUN "cd nise_bosh;./bin/init"
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 #1.9.3-p484
