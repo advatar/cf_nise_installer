@@ -1,12 +1,5 @@
 #!/bin/bash -ex
 
-if [ ! -f /etc/lsb-release ] || \
-   (. /etc/lsb-release && [ $DISTRIB_RELEASE != "10.04" ]) || \
-   [ `uname -m` != "x86_64" ]; then
-    echo "This installer supports only Ubuntu 10.04 64bit server"
-    exit 1;
-fi
-
 # Git bootstrap
 if ! (which git); then
      apt-get update
