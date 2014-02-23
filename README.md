@@ -37,7 +37,7 @@ If you want to build a devbox on a Vagrant VM, skip this section and see the nex
 Run the commands below on your server:
 
 ```sh
-sudo apt-get install curl
+ apt-get install curl
 bash < <(curl -s -k -B https://raw.github.com/yudai/cf_nise_installer/${INSTALLER_BRANCH:-master}/local/bootstrap.sh)
 ```
 
@@ -59,14 +59,14 @@ You can also manually manage the processes with the Monit command:
 
 ```sh
 # Start Monit
-sudo /var/vcap/bosh/bin/monit
+ /var/vcap/bosh/bin/monit
 # Launch `all` processes
-sudo /var/vcap/bosh/bin/monit start all
+ /var/vcap/bosh/bin/monit start all
 # See status
-sudo /var/vcap/bosh/bin/monit status
-sudo /var/vcap/bosh/bin/monit summary # shorter
+ /var/vcap/bosh/bin/monit status
+ /var/vcap/bosh/bin/monit summary # shorter
 # Stop `all` processes
-sudo /var/vcap/bosh/bin/monit stop all
+ /var/vcap/bosh/bin/monit stop all
 ```
 
 Confirm all the processes shown by `monit summary` indicate `running`. It takes a few minutes to initialize all processes.

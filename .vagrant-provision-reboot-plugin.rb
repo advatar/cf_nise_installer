@@ -107,7 +107,7 @@ class RebootPlugin < Vagrant.plugin('2')
       def provision
         command = 'shutdown -r now'
         @machine.ui.info("Issuing command: #{command}")
-        @machine.communicate.sudo(command) do |type, data|
+        @machine.communicate.(command) do |type, data|
           if type == :stderr
             @machine.ui.error(data);
           end
@@ -121,7 +121,7 @@ class RebootPlugin < Vagrant.plugin('2')
         @machine.ui.info("Launching remount_synced_folders action...")
 
         # Install guest tools
-        @machine.communicate.sudo('/etc/init.d/vboxadd setup') do |type, data|
+        @machine.communicate.('/etc/init.d/vboxadd setup') do |type, data|
           if type == :stderr
             @machine.ui.error(data);
           end
