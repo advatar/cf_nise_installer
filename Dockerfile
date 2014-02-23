@@ -3,11 +3,8 @@ RUN apt-get update
 RUN apt-get -y install git-core libmysqlclient-dev libpq-dev libsqlite3-dev
 ADD ./common /common
 ADD ./local /local
-RUN "/common/clone_nise_bosh.sh"
-RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-#1.9.3-p484
-RUN apt-get -y install ruby
+RUN "/local/clone_nise_bosh.sh"
+RUN "/local/install_rbenv.sh"
 RUN "gem install bundler cf --no-rdoc --no-ri"
 RUN "gem install rake -v 0.9.2.2 "
 RUN "/local/clone_cf_release.sh"
