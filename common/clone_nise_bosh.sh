@@ -8,5 +8,6 @@ fi
     if [ "" != "$NISE_BOSH_REV" ]; then
         git checkout $NISE_BOSH_REV
     fi
+    ./bin/init
     echo Use nise_bosh of revision: `git rev-list --max-count=1 HEAD` in $0
 )
