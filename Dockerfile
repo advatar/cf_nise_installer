@@ -5,6 +5,7 @@ ADD ./common /common
 ADD ./local /local
 RUN "/local/clone_nise_bosh.sh"
 RUN "/local/install_rbenv.sh"
+RUN ". ~/.profile"
 RUN "gem install bundler cf --no-rdoc --no-ri"
 RUN "gem install rake -v 0.9.2.2 "
 RUN "/local/clone_cf_release.sh"
