@@ -2,8 +2,6 @@
 
 CF_RELEASE_USE_HEAD=${CF_RELEASE_USE_HEAD:-no}
 
-rbenv local 1.9.3-p484
-
 cd nise_bosh
 bundle install
 release_version=`bundle exec ./bin/nise-bosh -w -m ../cf-release`
